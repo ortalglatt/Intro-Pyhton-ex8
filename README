@@ -1,0 +1,64 @@
+ortal.netzer
+312416845
+ortal glatt
+
+=============================
+=  README for ex8:   =
+=============================
+
+
+==================
+=  Description:  =
+==================
+In this exercise, we built a program and few functions using backtracking.
+
+The functions in ex8:
+
+Part A:
+"solve_sudoku" - This recursive function gets:
+   * board - list of lists of numbers
+   * number - at the beginning, default value of 1
+   * row - at the beginning, default value of 0
+ If this sudoku is solvable, the function will fill the '0' cells with the
+ right numbers, and return True. If the sudoku isn't solvable, the function
+ will return False and the sudoku board will not change.
+ This function uses:
+   * "num_counter" - Gets the sudoku board and a number, and return the number
+     of times that this number appears in the board.
+   * "legal_place" - Gets the sudoku board, a number and a point - tuple of a
+     row and a column. It checks if the this cell of the board can be fill with
+     the number, by checking if the number appears already in the point row, in
+     the point column and in the point small square (by using "square_board"
+     function.
+
+Part B:
+"print_k_subsets" - Gets two numbers - 'n' and 'k', and prints all the k size
+    subsets with the numbers from 0 to n-1, when every number in the subset, is
+    bigger then the previous number.
+    This function uses:
+    * "print_k_subsets_helper" - This recursive function gets a cur_set - list
+      with n 'False', 'k' - the length of the subsets, index, and picked - the
+      numbers of 'True's in the cur_set.
+      When there are k 'True's in the cur_set, the function uses the
+      'print_list' function.
+    * "print_list" - Gets the cur_list with k 'True's, and print the subset of
+      all the indexes that contain 'True' in the cur_list."""
+
+"fill_k_subsets" - Gets two numbers - 'n' and 'k', and an empty list.
+    The function will change the empty list to a list of all the k size subsets
+    with the numbers from 0 to n-1, when every number in the subset, is bigger
+    then the previous number.
+    This function uses:
+    * "fill_k_subsets_helper" - This recursive function gets the cur_set, 'k',
+      index, picked and a list of all the subsets until now (empty on the
+      beginning).
+      When there are k 'True's in the cur_set, the function uses the
+      'update_list' function.
+    * "update_list" - Gets the cur_list with k 'True's and the list of all the
+      subsets until now, and add the subset of all the indexes that contain
+      'True' in the cur_list, to the list.
+
+"return_k_subsets" - This recursive function gets tow numbers - 'n' and 'k',
+    and a default index - 0. It returns a list of all the k size subsets with
+    the numbers from 0 to n-1, when every number in the subset, is bigger then
+    the previous number.
